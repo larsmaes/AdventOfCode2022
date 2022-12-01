@@ -21,4 +21,14 @@ jobs:
         run: go build -v ./...
 
       - name: Test
-        run: go test -v ./...
+        run: |
+          go install github.com/jstemmer/go-junit-report/v2@latest
+          go test -v ./... 2>&1 | go-junit-report -set-exit-code > report.xml
+
+      - name: Test Report
+        uses: dorny/test-reporter@v1
+        if: success() || failure() # run this step even if previous step failed
+        with:
+          name: Tests # Name of the check run which will be created
+          path: report.xml # Path to test results
+          reporter: jest-junit
