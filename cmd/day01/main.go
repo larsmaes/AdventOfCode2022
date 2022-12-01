@@ -16,6 +16,6 @@ func main() {
 		os.Exit(1)
 	}
 
-	fmt.Printf("Day1 part 1: %d", aoc2022.Day01part01(input))
-	fmt.Printf("Day1 part 2: %d", aoc2022.Day01part02(input))
+	fmt.Printf("Day1 part 1: %d\n", aoc2022.Day01part01(input))
+	fmt.Printf("Day1 part 2: %d\n", aoc2022.Day01part02(input))
 }
