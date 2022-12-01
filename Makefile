@@ -6,3 +6,6 @@ $(BINARIES):
 
 test:
 	go test ./...
+
+clean:
+	rm bin/*
