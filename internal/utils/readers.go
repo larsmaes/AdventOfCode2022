@@ -19,7 +19,7 @@ func ReadIntFile(filename string) ([]int, error) {
 	for scanner.Scan() {
 		i, err := strconv.Atoi(scanner.Text())
 		if err != nil {
-			return nil, err
+			i = 0
 		}
 		input = append(input, i)
 	}
