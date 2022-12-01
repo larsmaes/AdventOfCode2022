@@ -4,33 +4,38 @@ import (
 	"testing"
 )
 
+type testData struct {
+	input []int
+}
+
+var tests = testData{
+	[]int{
+		1000,
+		2000,
+		3000,
+		0,
+		4000,
+		0,
+		5000,
+		6000,
+		0,
+		7000,
+		8000,
+		9000,
+		0,
+		10000,
+	},
+}
+
 func TestDay01part01(t *testing.T) {
-	type args struct {
-		input []int
-	}
 	tests := []struct {
 		name string
-		args args
+		args testData
 		want int
 	}{
 		{
 			name: "Calories",
-			args: args{[]int{
-				1000,
-				2000,
-				3000,
-				0,
-				4000,
-				0,
-				5000,
-				6000,
-				0,
-				7000,
-				8000,
-				9000,
-				0,
-				10000,
-			}},
+			args: tests,
 			want: 24000,
 		},
 	}
@@ -44,32 +49,14 @@ func TestDay01part01(t *testing.T) {
 }
 
 func TestDay01part02(t *testing.T) {
-	type args struct {
-		input []int
-	}
 	tests := []struct {
 		name string
-		args args
+		args testData
 		want int
 	}{
 		{
 			name: "Top3Calories",
-			args: args{[]int{
-				1000,
-				2000,
-				3000,
-				0,
-				4000,
-				0,
-				5000,
-				6000,
-				0,
-				7000,
-				8000,
-				9000,
-				0,
-				10000,
-			}},
+			args: tests,
 			want: 45000,
 		}, // TODO: Add test cases.
 	}
